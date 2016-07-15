@@ -1,0 +1,26 @@
+{
+  "name": "react-redux-game-of-life",
+  "version": "1.0.0",
+  "description": "Conway's Game of Life",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangjiakun/react-redux-game-of-life.git"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "redux",
+    "game",
+    "game-of-life"
+  ],
+  "author": "jk0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangjiakun/react-redux-game-of-life/issues"
+  },
+  "homepage": "https://github.com/wangjiakun/react-redux-game-of-life#readme"
+}
