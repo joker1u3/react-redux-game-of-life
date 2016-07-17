@@ -1,17 +1,13 @@
 import * as types from '../constants/ActionTypes';
 
-export function addUnit() {
-  return { type: types.ADD_UNIT }
+export function initUnit() {
+  return { type: types.INIT_UNITS }
 }
 
-export function makeUnitLive(id) {
-  return { type: types.MAKE_UNIT_LIVE, id }
+export function updateUnitState(id, state) {
+  return { type: types.UPDATE_UNIT_STATE, id, state }
 }
 
-export function makeUnitGrow(id) {
-  return { type: types.MAKE_UNIT_GROW, id }
-}
-
-export function makeUnitDie(id) {
-  return { type: types.MAKE_UNIT_DIE, id }
+export function updateUnitsState() {
+  return { type: types.UPDATE_UNITS_STATE }
 }
