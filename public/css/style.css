@@ -1,0 +1,36 @@
+.matrix, .row{
+  box-sizing: border-box;
+  line-height: 0;
+  text-align: center;
+}
+
+.matrix {
+  display: table;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: rgba(211, 211, 211, 0.3);
+}
+
+.row {
+  display: table-row;
+}
+
+.unit {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 2px;
+  border-radius: 50%;
+}
+
+.dead {
+  background-color: rgba(255, 0, 0,.1);
+}
+
+.young {
+  background-color: rgba(255, 0, 0,.35);
+}
+
+.old {
+  background-color: rgba(255, 0, 0,.1);
+}
