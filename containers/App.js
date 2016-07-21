@@ -27,7 +27,8 @@ App.propTypes = {
         state: PropTypes.string.isRequired
       }).isRequired
     ).isRequired
-  ).isRequired
+  ).isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 function select(state) {
