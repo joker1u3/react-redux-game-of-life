@@ -12,10 +12,10 @@ export function updateUnitsState() {
   return { type: types.UPDATE_UNITS_STATE }
 }
 
-export function gameBegin() {
-  return { type: types.GAME_BEGIN }
+export function gameStart() {
+  return { type: types.GAME_START }
 }
 
-export function gameEnd() {
-  return { type: types.GAME_END }
+export function gameStop() {
+  return { type: types.GAME_STOP }
 }
