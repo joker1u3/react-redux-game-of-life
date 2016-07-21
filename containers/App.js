@@ -8,15 +8,18 @@ import { UnitStates } from '../constants/ActionTypes';
 
 export default class App extends Component {
   render() {
-    const { visibleUnits, generation, actions, toolbarActions } = this.props;
+    const { visibleUnits, generation, editing, actions, toolbarActions } = this.props;
+    console.log(editing);
     return (
       <div>
         <Toolbar
           generation={generation}
           actions={toolbarActions}
+          editing={editing}
           />
         <UnitList
           units={visibleUnits}
+          editing={editing}
           actions={actions}
           />
       </div>
@@ -34,6 +37,7 @@ App.propTypes = {
     ).isRequired
   ).isRequired,
   generation: PropTypes.number.isRequired,
+  editing: PropTypes.bool.isRequired,
   actions: PropTypes.object.isRequired,
   toolbarActions: PropTypes.object.isRequired
 }
@@ -41,7 +45,8 @@ App.propTypes = {
 function select(state) {
   return {
     visibleUnits: state.unitList.units,
-    generation: state.unitList.generation
+    generation: state.unitList.generation,
+    editing: state.unitList.editing
   }
 }
 
@@ -51,7 +56,7 @@ function mapDispatchToProps(dispatch) {
     toolbarActions: bindActionCreators({
       gameInit: UnitActions.gameInit,
       gameStart: UnitActions.gameStart,
-      gameStio: UnitActions.gameStop
+      gameStop: UnitActions.gameStop
     }, dispatch)
   }
 }
