@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div>
         <UnitList
-          units={this.props.visibleUnits}
+          units={visibleUnits}
           actions={actions}
           />
       </div>
