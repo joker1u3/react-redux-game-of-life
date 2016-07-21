@@ -11,3 +11,11 @@ export function updateUnitState(id, state) {
 export function updateUnitsState() {
   return { type: types.UPDATE_UNITS_STATE }
 }
+
+export function gameBegin() {
+  return { type: types.GAME_BEGIN }
+}
+
+export function gameEnd() {
+  return { type: types.GAME_END }
+}
