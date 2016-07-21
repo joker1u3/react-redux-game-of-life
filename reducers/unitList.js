@@ -35,7 +35,6 @@ export default function gameOfLifeApp (state = initialState, action) {
         )
         return Object.assign([], unitRow, nextUnitRow);
       });
-      console.log(s);
       return Object.assign({}, state, {units:s});
     default:
       return state;
