@@ -18,8 +18,9 @@
   box-sizing: border-box;
 }
 
-.toolbar button {
+.toolbar>.toolbar-item {
   margin-right: 10px;
+  display: inline-block;
 }
 
 .row {
