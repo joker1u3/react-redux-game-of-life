@@ -1,17 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import UnitList from '../components/UnitList';
-import { initUnit, updateUnitState, updateUnitsState } from '../actions';
+import * as UnitActions from '../actions';
 import { UnitStates } from '../constants/ActionTypes';
 
 export default class App extends Component {
   render() {
-    const { dispatch, visibleUnits } = this.props;
+    const { visibleUnits, actions } = this.props;
     return (
       <div>
         <UnitList
           units={this.props.visibleUnits}
-          onUnitClick = { id => dispatch(updateUnitState(id, UnitStates.YOUNG)) }
+          actions={actions}
           />
       </div>
     );
@@ -35,4 +36,10 @@ function select(state) {
   }
 }
 
-export default connect(select)(App)
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(UnitActions, dispatch)
+  }
+}
+
+export default connect(select, mapDispatchToProps)(App);
