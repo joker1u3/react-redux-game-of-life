@@ -1,9 +1,10 @@
-import { INIT_UNITS, UPDATE_UNIT_STATE, GAME_START, GAME_STOP, UnitStates } from '../constants/ActionTypes';
+import { INIT_UNITS, UPDATE_UNIT_STATE, UPDATE_UNITS_STATE, GAME_START, GAME_STOP, UnitStates } from '../constants/ActionTypes';
 
 const initialState = {
   units: initUnits(),
   generation: 1,
-  editing: true
+  editing: true,
+  running: false
 }
 
 function initUnits() {
@@ -27,6 +28,14 @@ export default function gameOfLifeApp (state = initialState, action) {
   switch (action.type) {
     case INIT_UNITS:
       return Object.assign({}, state, initialState);
+    case UPDATE_UNITS_STATE:
+      return Object.assign(
+        {},
+        state,
+        {
+          generation: state.generation + 1
+        }
+      );
     case UPDATE_UNIT_STATE:
       let s =  state.units.map(unitRow => {
         let nextUnitRow = unitRow.map(unit => {
@@ -43,7 +52,7 @@ export default function gameOfLifeApp (state = initialState, action) {
         {},
         state,
         {
-          generation: state.generation + 1,
+          running: true,
           editing: false
         }
       );
@@ -52,6 +61,7 @@ export default function gameOfLifeApp (state = initialState, action) {
         {},
         state,
         {
+          running: false,
           editing: true
         }
       );
