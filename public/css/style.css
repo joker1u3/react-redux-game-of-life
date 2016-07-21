@@ -11,6 +11,17 @@
   background-color: rgba(211, 211, 211, 0.3);
 }
 
+.toolbar {
+  margin: 0 auto;
+  padding: 15px 0;
+  display: table;
+  box-sizing: border-box;
+}
+
+.toolbar button {
+  margin-right: 10px;
+}
+
 .row {
   display: table-row;
 }
@@ -21,6 +32,7 @@
   display: inline-block;
   margin: 2px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .dead {
