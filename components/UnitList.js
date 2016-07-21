@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Unit from './Unit';
 import { UnitStates } from '../constants/ActionTypes';
 
-const UnitList = ({ onUnitClick, units }) => (
+const UnitList = ({ units, actions }) => (
   <div className='matrix'>
     {units.map((unitsColumn, index) =>
       <div className='row' key={ `row_${index}` } >
@@ -10,7 +10,8 @@ const UnitList = ({ onUnitClick, units }) => (
             <Unit
               {...unit}
               key={ `unit_${index}_${columnIndex}` }
-              onClick={() => onUnitClick(unit.id, UnitStates.YOUNG)}
+              actions={actions}
+              onClick={() => actions.updateUnitState(unit.id, UnitStates.YOUNG)}
             />
         )}
       </div>
@@ -19,7 +20,7 @@ const UnitList = ({ onUnitClick, units }) => (
 )
 
 UnitList.propTypes = {
-  onUnitClick: PropTypes.func.isRequired,
+  actions: PropTypes.object.isRequired,
   units: PropTypes.arrayOf(
     PropTypes.arrayOf(
       PropTypes.shape({
