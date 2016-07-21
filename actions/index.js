@@ -1,6 +1,6 @@
 import * as types from '../constants/ActionTypes';
 
-export function initUnit() {
+export function initUnits() {
   return { type: types.INIT_UNITS }
 }
 
@@ -10,6 +10,10 @@ export function updateUnitState(id, state) {
 
 export function updateUnitsState() {
   return { type: types.UPDATE_UNITS_STATE }
+}
+
+export function gameInit() {
+  return { type: types.INIT_UNITS }
 }
 
 export function gameStart() {
