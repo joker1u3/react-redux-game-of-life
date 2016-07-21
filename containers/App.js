@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import UnitList from '../components/UnitList';
+import Toolbar from '../components/Toolbar';
 import * as UnitActions from '../actions';
 import { UnitStates } from '../constants/ActionTypes';
 
@@ -10,6 +11,12 @@ export default class App extends Component {
     const { visibleUnits, actions } = this.props;
     return (
       <div>
+        <Toolbar
+          actions={{
+            gameStart: actions.gameStart,
+            gameStio: actions.gameStop
+          }}
+          />
         <UnitList
           units={visibleUnits}
           actions={actions}
