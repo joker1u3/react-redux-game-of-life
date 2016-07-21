@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Unit from './Unit';
 import { UnitStates } from '../constants/ActionTypes';
 
-const UnitList = ({ units, actions }) => (
+const UnitList = ({ units, editing, actions }) => (
   <div className='matrix'>
     {units.map((unitsColumn, index) =>
       <div className='row' key={ `row_${index}` } >
@@ -12,6 +12,7 @@ const UnitList = ({ units, actions }) => (
               key={ `unit_${index}_${columnIndex}` }
               actions={actions}
               onClick={() => actions.updateUnitState(unit.id, UnitStates.YOUNG)}
+              disabled={!editing}
             />
         )}
       </div>
