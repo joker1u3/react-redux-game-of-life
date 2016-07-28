@@ -39,3 +39,6 @@ jspm_packages
 # Atom's Temp File
 .tags
 .tags1
+
+# Webpack output derectory
+dist
